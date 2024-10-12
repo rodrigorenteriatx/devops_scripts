@@ -15,7 +15,7 @@ lastb | awk 'NR < 4'
 echo -e "\n${G}---LOGGED IN---${RST}"
 w -s
 
-echo -e "\n${G}KERNEL VERSION / ARCH${RST}\n"
+echo -e "\n${G}KERNEL VERSION / ARCHITECTURE${RST}\n"
 mpstat | awk 'NR < 3 ($4="") '
 echo -e "${G}UPTIME:${RST} $(uptime -p)\n"
 echo -e "${G}----CPU----${RST}"
