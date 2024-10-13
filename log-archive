@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+if [ $# -ne 1 ];then
+	"Invalid Arguement/s"
+	exit 1
+fi
+
+if [ ! -d $1 ];then
+	echo "Invalid Directory"
+	exit 1
+fi
+
+if [ ! -d /var/log/logs_arch ];then
+	mkdir /var/log/logs_arch
+fi
+
+tar -cvzf /var/log/logs_arch/logs_archive_$(date +"%Y%m%d").tar.gz $1
+
+if [ $? -eq 0 ]; then
+	echo "Archive created successfully!!!"
+	exit 0
+else
+	echo "Tar Failed"
+	exit 1
+fi
+
+
+
